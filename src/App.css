@@ -1,38 +1,120 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.App{
+  background-color: slateblue;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  gap: 30px;
+  padding: 30px;
+}
+
+.input-todo{
+  display: none;
+  position: absolute;
+  top: 25%;
+  left: calc(100vw-500px/2);
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  padding: 40px;
+  width: 500px;
+  border-radius: 30px; 
+  gap: 15px;
+}
+.input-todo input, .input-todo textarea, .input-todo button{
+  width: 100%;
+  padding: 5px 10px;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  border:1px solid white;
+  transition: 0.5s ease-in-out;
+}
+
+.input-todo input:focus{
+  border-bottom: 1px solid slateblue;
+}
+.input-todo textarea{
+  resize: vertical;
+  min-height: 250px;
+}
+.input-todo textarea:focus{
+  
+  border: 1px solid slateblue;
+}
+.input-todo button{
+  background-color: #7c68fc;
+  cursor: pointer;
+  color: white;
+  border-radius: 5px;
+  
+}
+.input-todo button:hover{ 
+  background-color: #523fce;
+}
+.input-todo button:active{
+  
+  background-color: slateblue;
+}
+
+.todos-list-container{
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 20px;
+  justify-content: space-between;
+}
+.todos-list-container .todo-card{
+  background-color: white;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 200px;
+}
+.input-todo .close-btn{
+  align-self: flex-end;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  padding: 5px;
+  
+}
+.input-todo .close-btn *{
+  font-size: 20px;
+}
+
+.input-todo .close-btn:hover{
+  background-color: #7c68fc;
+  color: white;
+}
+.input-todo .close-btn:active{
+  background-color:#523fce;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.add-todo-btn{
+  background-color: white;
+  color: #523fce;
+  border: none;
+  border:1px solid white;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 100px;
+  transition: 0.1s ease-in-out;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.add-todo-btn:hover{
+  scale: 1.01;
+  background-color:#7c68fc;
+  color: white;
 }
+.add-todo-btn:active{
+  background-color: #523fce;
+}
+
+.no-todos-added{ 
+  text-align: center;
+  color: white;
+}
+
